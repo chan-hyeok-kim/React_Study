@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //깊은 복사하기
+        //concat,filter,map,slice,스프레드(전개)연산자
+    
+    const a=[1,2,3];
+
+    const b=[...a];
+    console.log('1. ==========스프레드 연산');
+    b.push(4);
+    console.log(`a의값은:${a}`); //1,2,3
+    console.log(`${b}`); //1,2,3,4
+    const c=[0,...a,4];   
+    console.log(`${c}`)//0,1,2,3,4
+
+    console.log('2. ==========추가하기');
+    const a2=[1,2,3];
+    const b2=a2.concat(4);
+    console.log(`a의값은:${a2}`); //1,2,3
+    console.log(`${b2}`); //1,2,3,4
+     
+    console.log('3. ==========걸러내기');
+    const a3=[1,2,3];
+    const b3=a3.filter((n)=>{ return n!=1;}); //boolean을 리턴받는다
+      //n이 1이 아니면 true 리턴
+    console.log(`${b3}`);
+
+    console.log('4. ==========잘라내기');
+    const a4=[1,2,3];
+    const b4=a4.slice(0,2);
+    console.log(b4); //1,2
+    const c4=[a4.slice(0,2)];
+    console.log(c4); //1,2
+    const d4=[...a4.slice(0,2),4,...a4.slice(2,3)];
+    console.log(d4);
+
+    console.log('5. ==========반복하기');
+    const a5=[1,2,3];
+
+    //원래는 순회할 때 for문이나 foreach사용
+    a5.forEach((n)=>{ console.log(n) });  //그러나 리턴이 안됨
+    //그래서 map사용
+    const b5= a5.map((n)=>n);
+    const b51= a5.map((n)=>{ return n });
+
+
+
+    console.log('6. ==========수정하기');
+    
+    const a6={id:1,name:"홍길동"};
+    const b6={...a6, name:"임꺽정"};
+    console.log(b6);
+    const data61={phone:"2222"};
+    const a61={id:1,name:"홍길동",phone:"1111",age:17,gender:"남"};
+    const b61={...a61,...data61};
+    console.log(b61);
+
+    const users=[
+        {id:1,name:"구태모",phone:"2222"},
+        {id:2,name:"이대엽",phone:"3333"},
+        {id:3,name:"오승훈",phone:"4444"}
+    ];
+
+    const updateUserDto={
+        id:2, name:"홍길동"
+    }
+    console.log(users);
+    
+    const newUsers= users.map(u=>{
+        return u.id===updateUserDto.id ? {...u,...updateUserDto} : u
+     });
+    console.log(newUsers,"새 유저");
+
+    console.log(users);
+
+
+    // users[1].name=updateUserDto.name;
+    // console.log(users);
+    //이 방식은 원본이 바뀌었으므로 못씀(for 불변함수)
+
+   
+
+    </script>
+</body>
+</html>
