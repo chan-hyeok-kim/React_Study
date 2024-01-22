@@ -6,10 +6,13 @@ import { Link, Route, Routes } from "react-router-dom";
 import UseMemo from "./pages/UseMemo";
 import UseEffect from "./pages/UseEffect";
 import UseRef from "./pages/UseRef";
+import ComponentsStyled from "./pages/ComponentsStyled";
+import Header from "./pages/Header";
 
 function App() {
   return (
     <div>
+      <Header></Header>
       <div className="header">
         <ol>
           <li>
@@ -21,6 +24,9 @@ function App() {
           <li>
             <Link to="/useRef">useRef로 가기</Link>
           </li>
+          <li>
+            <Link to="/ComponentsStyled">ComponentsStyled로 가기</Link>
+          </li>
         </ol>
       </div>
       <Container>
@@ -28,6 +34,12 @@ function App() {
           <Route path="/useMemo" exact={true} element={<UseMemo />} />
           <Route path="/useEffect" exact={true} element={<UseEffect />} />
           <Route path="/useRef" exact={true} element={<UseRef />} />
+
+          <Route
+            path="/componentsStyled"
+            exact={true}
+            element={<ComponentsStyled />}
+          />
         </Routes>
       </Container>
     </div>
