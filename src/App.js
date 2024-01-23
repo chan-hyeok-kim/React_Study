@@ -8,27 +8,13 @@ import UseEffect from "./pages/UseEffect";
 import UseRef from "./pages/UseRef";
 import ComponentsStyled from "./pages/ComponentsStyled";
 import Header from "./pages/Header";
+import Footer from "./pages/Footer";
 
 function App() {
   return (
     <div>
-      <Header></Header>
-      <div className="header">
-        <ol>
-          <li>
-            <Link to="/useEffect">useEffect로 가기</Link>
-          </li>
-          <li>
-            <Link to="/useMemo">useMemo로 가기</Link>
-          </li>
-          <li>
-            <Link to="/useRef">useRef로 가기</Link>
-          </li>
-          <li>
-            <Link to="/ComponentsStyled">ComponentsStyled로 가기</Link>
-          </li>
-        </ol>
-      </div>
+      <Header />
+      <Footer />
       <Container>
         <Routes>
           <Route path="/useMemo" exact={true} element={<UseMemo />} />
