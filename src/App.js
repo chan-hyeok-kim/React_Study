@@ -7,14 +7,14 @@ import UseMemo from "./pages/UseMemo";
 import UseEffect from "./pages/UseEffect";
 import UseRef from "./pages/UseRef";
 import ComponentsStyled from "./pages/ComponentsStyled";
-import Header from "./pages/Header";
-import Footer from "./pages/Footer";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Login from "./components/Login";
+import LoginPage from "./pages/LoginPage";
 
 function App() {
   return (
     <div>
-      <Header />
-      <Footer />
       <Container>
         <Routes>
           <Route path="/useMemo" exact={true} element={<UseMemo />} />
@@ -26,6 +26,7 @@ function App() {
             exact={true}
             element={<ComponentsStyled />}
           />
+          <Route path="/" exact={true} element={<LoginPage />} />
         </Routes>
       </Container>
     </div>
