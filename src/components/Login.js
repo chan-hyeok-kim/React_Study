@@ -2,14 +2,14 @@ import React from "react";
 import styled from "styled-components";
 
 const LoginBox = styled.div`
-  padding: 30px 0 30px 0;
+  padding: 30px 0 30px 30px;
 `;
 
 const Login = () => {
   return (
-    <div>
+    <LoginBox>
       <h1>로그인 페이지입니다</h1>
-    </div>
+    </LoginBox>
   );
 };
 
