@@ -12,7 +12,7 @@ const HeaderList = styled.div`
 const Header = () => {
   return (
     <div>
-      <HeaderList>
+      <HeaderList backgroundColor="blue">
         <ul>
           <ol>
             <li>

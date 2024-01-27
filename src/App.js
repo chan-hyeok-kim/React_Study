@@ -7,10 +7,7 @@ import UseMemo from "./pages/UseMemo";
 import UseEffect from "./pages/UseEffect";
 import UseRef from "./pages/UseRef";
 import ComponentsStyled from "./pages/ComponentsStyled";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Login from "./components/Login";
-import LoginPage from "./pages/LoginPage";
+import HomePage from "./pages/HomePage";
 
 function App() {
   return (
@@ -26,7 +23,7 @@ function App() {
             exact={true}
             element={<ComponentsStyled />}
           />
-          <Route path="/" exact={true} element={<LoginPage />} />
+          <Route path="/" exact={true} element={<HomePage />} />
         </Routes>
       </Container>
     </div>
